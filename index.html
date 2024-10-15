@@ -3,76 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to My Blog</title>
+    <title>Simple Blog with Comments</title>
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background-color: #3498db;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+            padding: 20px;
         }
         h1 {
+            color: #333;
+        }
+        #comment-section {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .comment h4 {
+            margin: 0 0 5px 0;
+        }
+        .comment p {
             margin: 0;
-            font-size: 2.5em;
         }
-        main {
-            margin: 60px auto;
-            padding: 30px;
-            max-width: 900px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #2c3e50;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #555;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #34495e;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 0.9em;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+        #comment-form {
+            margin-top: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome </h1>
-    </header>
-    
-    <main>
-        <h2>About This Project</h2>
-        <p>This is a simple blog page built using PHP and HTML. It will be expanded later to include blog posts, comments, and much more.</p>
-    </main>
+    <h1>My  Blog</h1>
+    <div id="comment-section">
+        <h2>Comments</h2>
+        <div id="comments"></div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 My Blog | Built with love and passion!</p>
-    </footer>
+    <div id="comment-form">
+        <h3>Leave a Comment:</h3>
+        <input type="text" id="username" placeholder="Your Name" required>
+        <textarea id="comment" placeholder="Your Comment" required></textarea>
+        <button onclick="addComment()">Submit</button>
+    </div>
+
+    <script>
+        function addComment() {
+            const username = document.getElementById("username").value;
+            const comment = document.getElementById("comment").value;
+
+            if (username && comment) {
+                const commentSection = document.getElementById("comments");
+
+                const newComment = document.createElement("div");
+                newComment.classList.add("comment");
+                newComment.innerHTML = `<h4>${username}</h4><p>${comment}</p>`;
+
+                commentSection.appendChild(newComment);
+
+                // Clear the input fields
+                document.getElementById("username").value = "";
+                document.getElementById("comment").value = "";
+            } else {
+                alert("Please fill in both fields!");
+            }
+        }
+    </script>
 </body>
 </html>
+
 
 
