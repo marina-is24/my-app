@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Background gradient */
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+#comment-section {
+    margin-top: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+.comment {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+.comment:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* Hover shadow effect */
+}
+.comment h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+.comment p {
+    margin: 0;
+}
+#comment-form {
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+input[type="text"], textarea {
+    width: calc(100% - 22px); /* Full width minus padding */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth transition */
+}
+input[type="text"]:focus, textarea:focus {
+    border-color: #2575fc; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+button {
+    background-color: #2575fc; /* Button background */
+    color: white; /* Button text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+button:hover {
+    background-color: #1c5bb1; /* Darker shade on hover */
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    h1 {
+        font-size: 2em; /* Smaller font size */
+    }
+    #comment-section, #comment-form {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
